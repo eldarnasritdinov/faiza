@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/">Return to home page</a></li>
+        <li><a href="orders">See all orders</a></li>
+    </ul>
+    <h1>Welcome admin!</h1>
+    <h2>List of all orders:</h2>
+
+    {% for order in foods %}
+        <h3>{{ order[1:] }}</h3>
+        <form method="POST" action="/delete_order">
+            <input type="hidden" name="order_id" value="{{ order[0] }}">
+            <button type="submit">Delete order</button>
+        </form>
+    {% endfor %}
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            margin-right: 20px;
+        }
+
+        li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        li a:hover {
+            background-color: #555;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 10px 0;
+            padding-top: 10px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="hidden"], button {
+            display: block;
+            margin: 0 auto;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+
+</body>
+</html>

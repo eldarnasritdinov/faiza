@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faiza Online Order</title>
+</head>
+<body>
+    <ul>
+        <li><a href="orders">See all orders</a></li>
+        <li><a href="admin">Admin page</a></li>
+    </ul>
+    <img src="https://nambafood.kg/image_by_id/43886" width="200">
+
+    <form action="/register" method="post">
+        <input name="name"  placeholder="Enter your full name" ="text">
+        <input name="time"  placeholder="Enter delivery time" = "text">
+        <select name="dish">
+            {% for i in dishes %}
+                <option value ="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Order my food!">
+    </form>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            margin-right: 20px;
+        }
+
+        li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        li a:hover {
+            background-color: #555;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</body>
+</html>
